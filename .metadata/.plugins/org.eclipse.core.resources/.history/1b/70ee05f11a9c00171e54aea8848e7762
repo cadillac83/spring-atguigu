@@ -1,0 +1,25 @@
+package com.hevispring.beans.annotation;
+
+import org.springframework.context.ApplicationContext;
+import org.springframework.context.support.ClassPathXmlApplicationContext;
+
+import com.hevispring.beans.annotation.controller.UserController;
+import com.hevispring.beans.annotation.respository.UserRepository;
+import com.hevispring.beans.annotation.service.UserService;
+
+public class Main {
+	public static void main(String[] args) {
+		ApplicationContext context = new ClassPathXmlApplicationContext("com/hevispring/beans/annotation/beans-annotation.xml");
+		
+		//@Component,@Service,@Controller,@Repository 看职责分类，但是大部分情况下，都一样。 自动扫描的默认情况下是第一个小写，后面驼峰命名。（可改value）
+		
+		//@Component
+		TestObject testObject = (TestObject) context.getBean("testObject");
+		testObject.sayHello();
+		
+		//
+		UserController userController = (UserController) context.getBean("userController");
+		UserService userService = (UserService) context.getBean("userService");
+		UserRepository userRepository = (UserRepository) context.getBean("userRepository");
+	}
+}

@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+	<!--
+	配置bean
+	class： bean的全类名，通过反射的方式在IOC容器中创建bean，所以要求bean中必须有无参构造器
+	id：表示容器中的bean id唯一 
+	-->
+	<bean id="helloworld" class="com.hevispring.beans.HelloWorld">
+		<property name="name" value="Lee Lei"></property>
+	</bean>
+	
+	<bean id="car" class="com.hevispring.beans.Car">
+		<constructor-arg value="BENZ" type="java.lang.String"></constructor-arg>
+		<constructor-arg value="301200" type="int"></constructor-arg>
+	</bean>
+	<bean id="car2" class="com.hevispring.beans.Car">
+		<constructor-arg value="BENZ MSAIDS" type="java.lang.String"></constructor-arg>
+		<constructor-arg value="320.00" type="double"></constructor-arg>
+	</bean>
+	<bean id="car3" class="com.hevispring.beans.Car">
+		<constructor-arg value="BENZ MSAIDS SETELLON" index="0"></constructor-arg>
+		<constructor-arg value="420000" index="2"></constructor-arg>
+		<constructor-arg value="320.00" index="1"></constructor-arg>
+	</bean>
+	
+	<bean id="person" class="com.hevispring.beans.Person">
+		<property name="name" value="Peter"></property>
+		<property name="age" value="29"></property>
+		<property name="car" ref="car3"></property>
+		<!-- 级联属性赋值 -->
+		<property name="car.name" value="Ford"></property>
+		<property name="car.maxSpeed" value="199.02"></property>
+	</bean>
+	
+	<!-- 内部bean -->
+	<bean id="person2" class="com.hevispring.beans.Person">
+		<property name="name" value="Anna"></property>
+		<property name="age" value="25"></property>
+		<property name="car">
+			<bean class="com.hevispring.beans.Car">
+				<constructor-arg value="BMW S310"></constructor-arg>
+				<constructor-arg value="300.00" type="double"></constructor-arg>
+				<constructor-arg value="312300" type="int"></constructor-arg>
+			</bean>
+		</property>
+	</bean>
+	
+	<!-- 集合引用 -->
+	<bean id="richPerson" class="com.hevispring.beans.RichPerson">
+		<property name="name" value="Sue"></property>
+		<property name="age">
+			<value>30</value>
+		</property>
+		<property name="car">
+			<ref bean="car"/>
+		</property>
+		<property name="cars">
+			<list>
+				<ref bean="car"/>
+				<ref bean="car2"/>
+				<ref bean="car3"/>
+				<bean class="com.hevispring.beans.Car">
+					<constructor-arg value="BMW WWW"></constructor-arg>
+					<constructor-arg value="350.00" type="double"></constructor-arg>
+					<constructor-arg value="352300" type="int"></constructor-arg>
+				</bean>
+			</list>
+		</property>
+	</bean>
+	
+	<!-- bean集合Map+List -->
+	<bean id="book1" class="com.hevispring.beans.Book">
+		<property name="name" value="Night mail"></property>
+		<property name="author" value="wei he"></property>
+	</bean>
+	<bean id="book2" class="com.hevispring.beans.Book">
+		<property name="name" value="Mission Fail"></property>
+		<property name="author" value="wei he"></property>
+	</bean>
+	<bean id="book3" class="com.hevispring.beans.Book">
+		<property name="name" value="Daily kill"></property>
+		<property name="author" value="wei he"></property>
+	</bean>
+	
+	
+	
+</beans>

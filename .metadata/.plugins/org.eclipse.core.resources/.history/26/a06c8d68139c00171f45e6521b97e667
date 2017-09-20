@@ -1,0 +1,5 @@
+package com.hevispring.beans.annotation.service;
+
+public class UserService {
+
+}

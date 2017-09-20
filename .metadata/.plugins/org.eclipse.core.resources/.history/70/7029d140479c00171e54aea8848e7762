@@ -1,0 +1,5 @@
+package com.hevispring.aop.helloworld;
+
+public class MyLoggingProxy {
+
+}

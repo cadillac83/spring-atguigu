@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<typeInfoHistroy>
+<typeInfo handle="=spring-1/C:\/Program Files \(x86)\/Java\/jre1.8.0_144\/lib\/rt.jar&lt;java.nio.file.attribute(UserDefinedFileAttributeView.class[UserDefinedFileAttributeView" modifiers="1537" timestamp="1505271566332"/>
+<typeInfo handle="=spring-1/src&lt;com.hevispring.beans.annotation.respository{UserRepository.java[UserRepository" modifiers="513" timestamp="1505698996245"/>
+<typeInfo handle="=spring-1/src&lt;com.hevispring.beans.generics.di{BaseService.java[BaseService" modifiers="1" timestamp="1505706713972"/>
+<typeInfo handle="=spring-1/src&lt;com.hevispring.beans.generics.di{BaseRepository.java[BaseRepository" modifiers="1" timestamp="1505707892994"/>
+<typeInfo handle="=spring-2/src&lt;com.hevispring.aop.helloworld{Calculate.java[Calculate" modifiers="513" timestamp="1505716732776"/>
+</typeInfoHistroy>

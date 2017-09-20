@@ -1,0 +1,6 @@
+package com.hevispring.aop.battery;
+
+public class Battery {
+	public int leave;
+
+}

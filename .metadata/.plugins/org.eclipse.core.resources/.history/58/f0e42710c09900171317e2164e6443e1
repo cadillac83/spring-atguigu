@@ -1,0 +1,7 @@
+package com.hevispring.beans.autowire;
+
+public class Car {
+	private String brand;
+	private double price;
+	
+}

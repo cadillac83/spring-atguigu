@@ -1,0 +1,6 @@
+package com.hevispring.beans.autowire;
+
+public class Car {
+	
+	
+}

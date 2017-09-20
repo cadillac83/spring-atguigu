@@ -1,0 +1,5 @@
+package com.hevispring.beans;
+
+public class RichPerson extends Person {
+
+}

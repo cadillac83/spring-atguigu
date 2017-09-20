@@ -1,0 +1,9 @@
+package com.hevispring.beans;
+
+import java.util.List;
+import java.util.Map;
+
+public class Libray {
+	Map<String,List<Book>> books;
+	
+}

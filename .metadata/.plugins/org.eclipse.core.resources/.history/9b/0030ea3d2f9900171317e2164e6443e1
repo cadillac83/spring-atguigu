@@ -1,0 +1,9 @@
+package com.hevispring.beans;
+
+import java.util.List;
+
+public class RichPerson extends Person {
+	
+	private List<Car> cars;
+
+}

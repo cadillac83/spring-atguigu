@@ -1,0 +1,10 @@
+package com.hevispring.aop.helloworld;
+
+import org.springframework.validation.BindingResult;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
+
+public interface Calculate {
+
+	public double plus(double a, double b);
+}

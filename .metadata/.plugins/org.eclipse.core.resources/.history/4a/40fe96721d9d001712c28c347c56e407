@@ -1,0 +1,17 @@
+package com.hevispring.aop.battery;
+
+import org.springframework.stereotype.Component;
+
+@Component
+public class Battery {
+	private int leave;
+
+	public int getLeave() {
+		return leave;
+	}
+
+	public void setLeave(int leave) {
+		this.leave = leave;
+	}
+	
+}

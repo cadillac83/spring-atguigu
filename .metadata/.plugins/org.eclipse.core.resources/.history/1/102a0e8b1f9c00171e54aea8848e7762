@@ -1,0 +1,20 @@
+package com.hevispring.beans.annotation.service;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
+import org.springframework.stereotype.Service;
+
+import com.hevispring.beans.annotation.respository.UserRepository;
+
+@Service
+public class UserService {
+	
+	@Autowired
+	@Qualifier("userAnotherRepositoryImpl")//此注释可以指定bean
+	UserRepository userRepository;
+	
+	public void add() {
+		System.out.println("userService: Add...");
+		userRepository.save();
+	}
+}

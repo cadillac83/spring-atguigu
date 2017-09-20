@@ -1,0 +1,39 @@
+package com.hevispring.aop;
+
+import java.util.Arrays;
+import java.util.List;
+
+import org.aspectj.lang.JoinPoint;
+import org.aspectj.lang.annotation.After;
+import org.aspectj.lang.annotation.AfterReturning;
+import org.aspectj.lang.annotation.Aspect;
+import org.aspectj.lang.annotation.Before;
+import org.springframework.stereotype.Component;
+
+@Aspect
+@Component
+public class LoggingAspect {
+	
+	//可参照LoggingProxy了解出发时机
+
+	@Before("execution(* com.hevispring.aop.Calculate.*(double, double))")
+	public void before(JoinPoint joinPoint) {
+		String methodName = joinPoint.getSignature().getName();
+		List<Object> args = Arrays.asList(joinPoint.getArgs());
+		System.out.println(methodName+" ("+args+")-beginning");
+	}
+	
+	@After("execution(* com.hevispring.aop.Calculate.*(double, double))")
+	public void after(JoinPoint joinPoint) {
+		String methodName = joinPoint.getSignature().getName();
+		List<Object> args = Arrays.asList(joinPoint.getArgs());
+		System.out.println(methodName+" ("+args+")-ending");
+	}
+	
+	@AfterReturning(value="execution(* com.hevispring.aop.Calculate.*(double, double)",returning="result")
+	public void afterReturning(JoinPoint joinPoint, Object result) {
+		String methodName = joinPoint.getSignature().getName();
+		List<Object> args = Arrays.asList(joinPoint.getArgs());
+		System.out.println(methodName+" ("+args+")-return"+result);
+	}
+}

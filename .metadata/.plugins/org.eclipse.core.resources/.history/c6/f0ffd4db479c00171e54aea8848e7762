@@ -1,0 +1,13 @@
+package com.hevispring.aop.helloworld;
+
+public class MyLoggingProxy {
+
+	private Object target;
+	
+	public Object getLoggingProxy() {
+		
+		
+		
+		return null;
+	}
+}

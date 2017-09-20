@@ -1,0 +1,50 @@
+package com.hevispring.aop.xml;
+
+import java.util.Arrays;
+import java.util.List;
+
+import org.aspectj.lang.JoinPoint;
+import org.aspectj.lang.ProceedingJoinPoint;
+
+public class LoggingAspect {
+	
+	public void defineJoinPointExpression() {}
+	
+	
+	public void before(JoinPoint joinPoint) {
+		String methodName = joinPoint.getSignature().getName();
+		List<Object> args = Arrays.asList(joinPoint.getArgs());
+		System.out.println(methodName+" ("+args+")-beginning");
+	}
+	
+	public void after(JoinPoint joinPoint) {
+		String methodName = joinPoint.getSignature().getName();
+		List<Object> args = Arrays.asList(joinPoint.getArgs());
+		System.out.println(methodName+" ("+args+")-ending");
+	}
+	
+	public void afterReturning(JoinPoint joinPoint, Object result) {
+		String methodName = joinPoint.getSignature().getName();
+		List<Object> args = Arrays.asList(joinPoint.getArgs());
+		System.out.println(methodName+" ("+args+")-return:"+result);
+	}
+	
+	public void afterThrowing(JoinPoint joinPoint, Exception err) {
+		String methodName = joinPoint.getSignature().getName();
+		List<Object> args = Arrays.asList(joinPoint.getArgs());
+		System.out.println(methodName+" ("+args+")-throw error:"+err);
+	}
+	
+	public Object around(ProceedingJoinPoint proceedingJoinPoint) {
+		Object result = null;
+		try {
+			result = proceedingJoinPoint.proceed();
+			System.out.println(proceedingJoinPoint.getSignature().getName()+ " runs with " + Arrays.asList(proceedingJoinPoint.getArgs()) + " = " + result);
+		} catch (Throwable e) {
+			
+			e.printStackTrace();
+		}
+		return result;
+	}
+	
+}

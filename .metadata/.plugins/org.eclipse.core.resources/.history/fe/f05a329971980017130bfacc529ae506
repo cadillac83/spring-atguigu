@@ -1,0 +1,9 @@
+package com.hevispring.beans;
+
+public class main {
+	public static void main(String[] args) {
+		HelloWorld hWorld = new HelloWorld();
+		hWorld.setName("Niao san");
+		hWorld.sayHello();
+	}
+}

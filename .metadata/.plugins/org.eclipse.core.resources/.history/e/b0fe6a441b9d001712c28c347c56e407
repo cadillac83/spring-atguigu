@@ -1,0 +1,19 @@
+package com.hevispring.aop.battery;
+
+import org.springframework.context.ApplicationContext;
+import org.springframework.context.support.ClassPathXmlApplicationContext;
+
+public class Main {
+	
+	public static void main(String[] args) {
+
+		ClassPathXmlApplicationContext context = new ClassPathXmlApplicationContext("com/hevispring/aop/battery/applicationContext.xml");
+		
+		
+		Calculate target = (Calculate) context.getBean("calculate");
+		
+		target.div(3, 1);
+		
+		
+	}
+}

@@ -1,0 +1,9 @@
+package com.hevispring.beans.autowire;
+
+public class Car {
+	private String name;
+	private Address address;
+	private Car car;
+	
+	
+}

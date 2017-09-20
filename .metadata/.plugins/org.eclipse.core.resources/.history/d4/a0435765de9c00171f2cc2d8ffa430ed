@@ -1,0 +1,10 @@
+package com.hevispring.aop;
+
+
+public class LoggingProxy<T> {
+	T target;
+	public T getLoggingProxy() {
+		
+		return null;
+	}
+}

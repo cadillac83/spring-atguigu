@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:p="http://www.springframework.org/schema/p"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+	
+	<!-- 设置为抽象bean，不可实例化，但是可以作为模板给继承 -->
+	<bean id="addresstmp" class="com.hevispring.beans.parent.Address" abstract="true"></bean>
+	<bean id="address" class="com.hevispring.beans.parent.Address" p:city="SHENZHEN" p:street="JILONG-3"></bean>
+	<!-- 使用parent属性，可以继承父bean的所有配置和属性，并可修改需要修改的属性 -->
+	<bean id="address2" parent="address"></bean>
+	<bean id="address3" parent="address" p:street="FUHUA-3"></bean>
+
+</beans>

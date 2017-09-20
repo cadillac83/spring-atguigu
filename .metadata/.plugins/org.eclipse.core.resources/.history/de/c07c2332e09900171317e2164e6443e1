@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:p="http://www.springframework.org/schema/p"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+	
+	<!-- 
+		使用bean的scope属性来配置bean的作用域
+		bean的scope默认是单例的（singleton）
+		prototype是原型的，即拥有自己的内存空间
+	-->
+	<bean id="address" class="com.hevispring.beans.scope.Address" p:city="SHENZHEN" p:street="JILONG-3"></bean>
+
+</beans>

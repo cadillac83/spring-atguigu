@@ -1,0 +1,27 @@
+package com.hevispring.aop.helloworld;
+
+import java.lang.reflect.InvocationHandler;
+import java.lang.reflect.Method;
+import java.lang.reflect.Proxy;
+
+public class CalculateLoggingProxy {
+
+	private Calculate target;
+
+
+	public Calculate getLoggingProxy() {
+		
+		Calculate proxy = null;
+		
+		proxy = (Calculate) Proxy.newProxyInstance(target.getClass().getClassLoader(), new Class[]{Calculate.class}, new InvocationHandler() {
+			
+			public Object invoke(Object proxy, Method method, Object[] args) throws Throwable {
+				
+				
+				return this;
+			}
+		});
+		
+		return proxy;
+	}
+}

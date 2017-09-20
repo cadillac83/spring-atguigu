@@ -1,0 +1,39 @@
+package com.hevispring.aop.battery;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
+
+@Component("calculator")
+public class CalculateImpl implements Calculate {
+	
+	private Battery battery;
+	
+	
+	public CalculateImpl() {
+		super();
+		this.battery = new Battery();
+		this.battery.setLeave(100);
+	}
+
+	@Override
+	public int plus(int a, int b) {
+		return a + b;
+	}
+
+	@Override
+	public int rec(int a, int b) {
+		return a - b;
+	}
+
+	@Override
+	public int mul(int a, int b) {
+		return a * b;
+	}
+
+	@Override
+	public int div(int a, int b) {
+		
+		return a / b;
+	}
+
+}

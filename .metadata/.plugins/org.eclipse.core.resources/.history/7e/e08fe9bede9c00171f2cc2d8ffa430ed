@@ -1,0 +1,32 @@
+package com.hevispring.aop;
+
+import java.lang.reflect.InvocationHandler;
+import java.lang.reflect.Method;
+import java.util.Arrays;
+
+public class LoggingProxy<T> {
+	T target;
+	
+	public LoggingProxy(T target) {
+		super();
+		this.target = target;
+	}
+
+	public T getLoggingProxy() {
+		ClassLoader classLoader = target.getClass().getClassLoader();
+		Class<?>[] interfaces = classLoader.getClass().getInterfaces();
+		InvocationHandler handler = new InvocationHandler() {
+			
+			@Override
+			public Object invoke(Object proxy, Method method, Object[] args) throws Throwable {
+				
+				System.out.println(method.getReturnType().toString()+" "+method.getName()+" ("+Arrays.asList(args)+")");
+				
+				
+				return null;
+			}
+		};
+		
+		return null;
+	}
+}

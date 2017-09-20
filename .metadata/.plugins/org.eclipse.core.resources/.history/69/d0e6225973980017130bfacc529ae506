@@ -1,0 +1,16 @@
+package com.hevispring.beans;
+
+import org.springframework.context.ApplicationContext;
+import org.springframework.context.support.ClassPathXmlApplicationContext;
+
+public class main {
+	public static void main(String[] args) {
+		/*
+		HelloWorld hWorld = new HelloWorld();
+		hWorld.setName("Niao san");
+		hWorld.sayHello();
+		*/
+		
+		ApplicationContext applicationContext = new ClassPathXmlApplicationContext()
+	}
+}

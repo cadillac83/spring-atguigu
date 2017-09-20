@@ -1,0 +1,8 @@
+package com.hevispring.beans.generics.di;
+
+public class BaseService<T> {
+
+	public void doSomething() {
+		System.out.println("picking repository...");
+	}
+}

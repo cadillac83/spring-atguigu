@@ -1,0 +1,24 @@
+package com.hevispring.aop.impl;
+
+import java.util.Arrays;
+import java.util.List;
+
+import org.aspectj.lang.JoinPoint;
+import org.aspectj.lang.annotation.Aspect;
+import org.aspectj.lang.annotation.Before;
+import org.springframework.stereotype.Component;
+
+@Aspect //表示此Bean为一个切面
+@Component //声明为一个组件
+public class AnnotationAspect {
+
+	//@Before为前置通知，execution()为aspectJ表达式
+	@Before("execution(* com.hevispring.aop.impl.Calculate.*(double, double))")
+	public void beforeMethod(JoinPoint joinpoint) {//方法中添加JoinPoint可以获取该连接点的信息
+		
+		
+		String methodName = joinpoint.getSignature().getName();
+		List<Object> args = Arrays.asList(joinpoint.getArgs());
+		System.out.println(methodName+" start running with args-"+args);
+	}
+}

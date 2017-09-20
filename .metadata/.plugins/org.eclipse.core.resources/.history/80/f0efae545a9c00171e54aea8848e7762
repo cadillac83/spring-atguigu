@@ -1,0 +1,35 @@
+package com.hevispring.aop.impl;
+
+import java.util.Arrays;
+import java.util.List;
+
+import org.aspectj.lang.JoinPoint;
+import org.aspectj.lang.annotation.After;
+import org.aspectj.lang.annotation.Aspect;
+import org.aspectj.lang.annotation.Before;
+import org.springframework.stereotype.Component;
+
+@Aspect //表示此Bean为一个切面
+@Component //声明为一个组件
+public class AnnotationAspect {
+
+	//@Before为前置通知，execution()为aspectJ表达式
+	@Before("execution(* com.hevispring.aop.impl.Calculate.*(double, double))")
+	public void beforeMethod(JoinPoint joinPoint) {//方法中添加org.aspectj.lang.JoinPoint可以获取该接入点的信息
+		
+		String methodName = joinPoint.getSignature().getName();
+		List<Object> args = Arrays.asList(joinPoint.getArgs());
+		System.out.println(methodName+" start running with args-"+args);
+	}
+	
+	//@After为后置通知，目标方法执行后（无论是否异常均会执行）
+	@After("execution(* com.hevispring.aop.impl.Calculate.*(double, double))")
+	public void afterMethod(JoinPoint joinPoint) {
+		
+		String methodName = joinPoint.getSignature().getName();
+		List<Object> args = Arrays.asList(joinPoint.getArgs());
+		System.out.println(methodName+" start running with args-"+args);
+	}
+	
+	//还有挺多的接入点的注解，需要的时候去查资料
+}

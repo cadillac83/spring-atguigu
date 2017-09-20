@@ -1,0 +1,29 @@
+package com.hevispring.aop.xml;
+
+import org.springframework.stereotype.Component;
+
+@Component("calculate")
+public class CalculateImpl implements Calculate {
+
+	@Override
+	public double plus(double a, double b) {
+		return a + b;
+	}
+
+	@Override
+	public double rec(double a, double b) {
+		return a - b;
+	}
+
+	@Override
+	public double mul(double a, double b) {
+		return a * b;
+	}
+
+	@Override
+	public double div(double a, double b) {
+		
+		return a / b;
+	}
+
+}

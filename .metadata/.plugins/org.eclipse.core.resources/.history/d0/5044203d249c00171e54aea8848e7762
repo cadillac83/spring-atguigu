@@ -1,0 +1,13 @@
+package com.hevispring.beans.generics.di;
+
+
+public class Main {
+
+	/**
+	 * ·ºĞÍÒÀÀµ×¢Èë
+	 * @param args
+	 */
+	public static void main(String[] args) {
+		
+	}
+}

@@ -1,0 +1,5 @@
+package com.hevispring.beans.generics.di;
+
+public class JobService extends BaseService<T> {
+
+}

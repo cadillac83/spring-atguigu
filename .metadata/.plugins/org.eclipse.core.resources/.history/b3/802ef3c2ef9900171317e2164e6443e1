@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+	<bean id="salary" class="com.hevispring.beans.spel.Salary">
+		<property name="basic" value="#{4624.00}"></property>
+		<property name="extra" value="2300.00"></property>
+	</bean>
+	
+	<bean id="peter" class="com.hevispring.beans.spel.Person">
+		<property name="name" value="Wei"></property>
+		<property name="salary" value="#{salary}"></property>
+		<property name="level" value="#{salary.basic > 4000 ? 'B' : 'C'}"></property>
+		<property name="luckyNum" value="#{T(java.lang.Math).random() * 36}"></property>
+	</bean>
+
+</beans>

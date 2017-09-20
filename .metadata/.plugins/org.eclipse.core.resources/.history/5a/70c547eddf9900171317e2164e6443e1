@@ -1,0 +1,16 @@
+package com.hevispring.beans.scope;
+
+import org.springframework.context.ApplicationContext;
+import org.springframework.context.support.ClassPathXmlApplicationContext;
+
+public class Main {
+	
+	public static void main(String[] args) {
+		ApplicationContext context = new ClassPathXmlApplicationContext("com/hevispring/beans/scope/beans-scope.xml");
+		Address address = (Address) context.getBean("address");
+		Address address2 = (Address) context.getBean("address");
+		
+		System.out.println(address == address2);
+		
+	}
+}

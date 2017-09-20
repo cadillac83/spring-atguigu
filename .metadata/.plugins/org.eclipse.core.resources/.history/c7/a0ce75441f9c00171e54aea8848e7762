@@ -1,0 +1,13 @@
+package com.hevispring.beans.annotation.respository.impl;
+
+import com.hevispring.beans.annotation.respository.UserRepository;
+
+public class UserAnotherRepositoryImpl implements UserRepository {
+
+	@Override
+	public void save() {
+		
+
+	}
+
+}

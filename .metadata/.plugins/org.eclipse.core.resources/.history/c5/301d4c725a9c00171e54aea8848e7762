@@ -1,0 +1,23 @@
+package com.hevispring.aop.impl;
+
+import org.springframework.context.ApplicationContext;
+import org.springframework.context.support.ClassPathXmlApplicationContext;
+
+public class Main {
+	
+	//使用注解的方式生命切面Aspect
+	public static void main(String[] args) {
+
+		ApplicationContext context = new ClassPathXmlApplicationContext("com/hevispring/aop/impl/applicationContext.xml");
+		Calculate bean = (Calculate) context.getBean("calculate");
+		double result = bean.plus(3, 2);
+		
+		System.out.println(result);
+		
+		result = bean.div(10, 12);
+		System.out.println(result);
+		
+		
+		
+	}
+}

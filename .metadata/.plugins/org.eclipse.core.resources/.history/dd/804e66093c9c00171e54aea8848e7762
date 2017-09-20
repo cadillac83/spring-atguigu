@@ -1,0 +1,8 @@
+package com.hevispring.aop.helloworld;
+
+import org.springframework.validation.BindingResult;
+
+public interface Calculate {
+
+	public double plus(double a, double b);
+}
